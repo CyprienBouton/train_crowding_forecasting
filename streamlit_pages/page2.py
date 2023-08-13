@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+
 def page2():
     """
     Page showing information about dataset.
