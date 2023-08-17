@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 
 def price_date():
-    fig, ax = plt.subplots(figsize=(3.,2.3))
+    fig, ax = plt.subplots()
     return fig
 
 def price_day():
-    fig, ax = plt.subplots(figsize=(3.,2.3))
+    fig, ax = plt.subplots()
     return fig
 
 def price_hour():
