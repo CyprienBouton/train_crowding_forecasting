@@ -34,33 +34,33 @@ def evaluate_model(class_model, dataset, labels, model_params={},
     scores = []
     with tqdm(total=n_splits) as pbar:
         for train_idx, _ in k_fold.split(dataset):
-        # Split dataset
-        X_train, X_val = dataset.iloc[train_idx], dataset.iloc[~train_idx]
-        y_train, y_val = labels.iloc[train_idx], labels.iloc[~train_idx]
+            # Split dataset
+            X_train, X_val = dataset.iloc[train_idx], dataset.iloc[~train_idx]
+            y_train, y_val = labels.iloc[train_idx], labels.iloc[~train_idx]
 
-        # Transform to Dataset objects
-        X_train = SNCFDataset(X_train)
-        X_val = SNCFDataset(X_val)
+            # Transform to Dataset objects
+            X_train = SNCFDataset(X_train)
+            X_val = SNCFDataset(X_val)
 
-        # Replace nan values
-        impute_missing_dict = X_train.train_impute_missing_values(
-            method_context=method_context, method_lags=method_lags)
-        X_val.predict_impute_missing_values(impute_missing_dict)
+            # Replace nan values
+            impute_missing_dict = X_train.train_impute_missing_values(
+                method_context=method_context, method_lags=method_lags)
+            X_val.predict_impute_missing_values(impute_missing_dict)
 
-        # Scale data
-        scaler = StandardScaler()
-        X_train = scaler.fit_transform(X_train)
-        X_val = scaler.transform(X_val)
-        # Initiate model
-        model = class_model(**model_params)
-        # Training
-        model.fit(X_train, y_train.values.ravel())
-        # Prediction
-        preds = model.predict(X_val)
-        # Append regression score
-        scores.append(mean_squared_error(y_val, preds))
+            # Scale data
+            scaler = StandardScaler()
+            X_train = scaler.fit_transform(X_train)
+            X_val = scaler.transform(X_val)
+            # Initiate model
+            model = class_model(**model_params)
+            # Training
+            model.fit(X_train, y_train.values.ravel())
+            # Prediction
+            preds = model.predict(X_val)
+            # Append regression score
+            scores.append(mean_squared_error(y_val, preds))
 
-        # Display progress bar
-        pbar.update(1)
+            # Display progress bar
+            pbar.update(1)
 
     return sum(scores)/n_splits
