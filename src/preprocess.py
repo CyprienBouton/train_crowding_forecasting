@@ -1,5 +1,6 @@
 import pandas as pd
 import datetime
+from src.sncf_dataset import SNCFDataset
 
 
 def datetime_to_float(d):
@@ -57,3 +58,4 @@ def preprocessing(dataset):
 
     # Convert composition to float
     dataset.composition = dataset.composition.astype(float)
+    return SNCFDataset(dataset)
