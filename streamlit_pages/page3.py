@@ -1,11 +1,11 @@
 import streamlit as st
-from src.visualize import (price_day, price_date, price_hour)
+from src.visualize import (price_weekday, price_date, price_hour)
 
 def page3():
     st.markdown("<h1>Data Visualization</h1>", unsafe_allow_html=True)
     parameter_to_visualized = {
         "Date": price_date,
-        "Day": price_day,
+        "Day": price_weekday,
         "Hour": price_hour,
     }
 
