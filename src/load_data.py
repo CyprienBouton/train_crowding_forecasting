@@ -10,11 +10,11 @@ def load_data():
     :param X_test: test dataset
     :type X_test: pd.DataFrame
     """
-    X = pd.read_csv('datasets/Xtrain_hgcGIrA.csv')
-    y = pd.read_csv('datasets/Ytrain_yL5OjS4.csv')
+    X_train = pd.read_csv('datasets/Xtrain_hgcGIrA.csv')
+    y_train = pd.read_csv('datasets/Ytrain_yL5OjS4.csv')
     X_test = pd.read_csv('datasets/Xtest.csv')
 
     # Get rid of the row number
-    y.drop(columns='Unnamed: 0', inplace=True)
-    return X, y, X_test
+    y_train.drop(columns='Unnamed: 0', inplace=True)
+    return X_train, y_train, X_test
 
