@@ -7,12 +7,27 @@ def main_page():
     """
     st.markdown("<h1>SNCF-Transilien Data Challenge</h1>", unsafe_allow_html=True)
     st.markdown("""
-    The aim of this challenge is to give SNCF-Transilien the tools to \
-        provide an accurate train occupancy rate forecasting. Thus, \
-        deliver precise real time crowding information (RTCI) to its \
-        passengers through digital services..<br/><br/>
-    There are 3 sections in this app:
-    - Dataset
-    - Data visualization
-    - Occupancy rate forecasting
+    </p><h2>Context</h2>
+        This project is part of a Data Challenge provided by ENS. Each year, the school 
+        organize machine learning challenges from data provided by public services, companies or 
+        laboratories. These challenges are free and open to anyone.
+        You can find this data challenge
+            <a href="https://challengedata.ens.fr/challenges/89/">here</a>.
+    </p>
+    
+    <p><h2>Goal</h2>
+        The aim of this challenge is to give SNCF-Transilien 
+        (Railway network operator covering the Paris region) the tools to
+        provide an accurate train occupancy rate forecasting. This tool will allow
+        the travelers to know how busy the train will be when they board it. This challenge
+        focus solely on forecasting the occupacy rates at the next station.
+    </p>
+    
+    <p><h2>Summary</h2>
+        <ul>
+            <li>Dataset</li>
+            <li>Visualization</li>
+            <li>Occupancy rate forecasting</li>
+        </ul>
+    </p>
     """, unsafe_allow_html=True)
