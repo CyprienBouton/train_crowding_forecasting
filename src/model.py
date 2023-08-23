@@ -1,5 +1,6 @@
 import numpy as np
 from tqdm import tqdm
+import pickle
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import KFold
@@ -60,6 +61,12 @@ def predict_model(dataset, models_dict):
     :return occupancy_rates: Predicted occupancy rates within the trains.
     :rtype occupancy_rates: np.array
     """
+    # If impute_missing_dict or scaler are not provided
+    for missing_model_name in ['impute_missing_dict', 'scaler']:
+        if missing_model_name not in models_dict.keys():
+            models_dict[missing_model_name] = pickle.load(
+                open('models/'+missing_model_name, 'rb'))
+    
     # Convert dataset to SNCF Dataset
     dataset = SNCFDataset(dataset)
 
