@@ -55,4 +55,4 @@ def preprocessing(dataset, inference=True):
     # Convert composition to float
     dataset.composition = dataset.composition.astype(float)
     # return a SNCFDataset
-    return SNCFDataset(dataset)
+    return dataset
