@@ -51,21 +51,25 @@ def train_model(class_model, dataset, labels, model_params={},
     return models_dict
 
 
-def predict_model(dataset, models_dict):
+def predict_model(dataset, models_input):
     """ Predict train occupancy rate.
 
     :param dataset: train dataset.
     :type dataset: pd.DataFrame
-    :param models_dict: Dictionary containing the trained models.
-    :type models_dict: dict
+    :param models_input: Trained models.
+    :type models_input: dict or ml model
     :return occupancy_rates: Predicted occupancy rates within the trains.
     :rtype occupancy_rates: np.array
     """
-    # If impute_missing_dict or scaler are not provided
-    for missing_model_name in ['impute_missing_dict', 'scaler']:
-        if missing_model_name not in models_dict.keys():
+    # If only one model is provided then load other models
+    if not isinstance(models_input, dict):
+        models_dict = {}
+        models_dict['model'] = models_input
+        for missing_model_name in ['impute_missing_dict', 'scaler']:
             models_dict[missing_model_name] = pickle.load(
                 open('models/'+missing_model_name, 'rb'))
+    else:
+        models_dict = models_input
     
     # Convert dataset to SNCF Dataset
     dataset = SNCFDataset(dataset)
