@@ -13,9 +13,9 @@ def load_data(processed=False):
     :rtype X_test: pd.DataFrame
     """
     if processed:
-        X_train = pickle.open('datasets/X_train', 'rb')
-        y_train = pickle.open('datasets/y_train', 'rb')
-        X_test = pickle.open('datasets/X_test', 'rb')
+        X_train = pickle.load(open('datasets/X_train', 'rb'))
+        y_train = pickle.load(open('datasets/y_train', 'rb'))
+        X_test = pickle.load(open('datasets/X_test', 'rb'))
     
     else:
         X_train = pd.read_csv('datasets/Xtrain_hgcGIrA.csv')
