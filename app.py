@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_pages import main_page, page2, page3, page4
+from streamlit_pages import main_page, page2, page3, page4, page5
 
 if __name__=="__main__":
     page_names_to_funcs = {
@@ -7,6 +7,7 @@ if __name__=="__main__":
     "Dataset": page2.page2,
     "Visualization": page3.page3,
     "Occupancy rate forecasting": page4.page4,
+    "Build your model": page5.page5,
     }
 
     selected_page = st.sidebar.selectbox("Go to page", page_names_to_funcs.keys())
