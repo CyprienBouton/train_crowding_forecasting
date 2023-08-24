@@ -56,9 +56,9 @@ def page4():
                 input[lag_variable] = np.nan
 
     file = st.file_uploader("Import your model (.pkl format)",type='pkl')
-    model = pickle.load(file)
     # Predict
     if st.button('Predict'):
+            model = pickle.load(file)
             input['way'] = 0
             input = preprocessing(pd.DataFrame(input, index=[0]))
             st.write(str(predict_model(input, model)[0]))
