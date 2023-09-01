@@ -47,10 +47,9 @@ def page5():
         n_splits = st.number_input("Number of splits", min_value=2)
         random_state = numberNone_input("Random state", min_value=0)
         if st.button('Compute cross validation score'):
-            with st.spinner("Please wait..."):
-                score = evaluate_model(
-                    class_model, 
-                    X_train, y_train, model_params=model_params,
-                    n_splits=n_splits, random_state=random_state)
+            score = evaluate_model(
+                class_model, 
+                X_train, y_train, model_params=model_params,
+                n_splits=n_splits, random_state=random_state)
             st.markdown(f"The average coefficient of determination is R<sup>2</sup>={round(score, 3)}", 
                         unsafe_allow_html=True)
