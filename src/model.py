@@ -1,5 +1,5 @@
 import numpy as np
-from tqdm import tqdm
+from stqdm import stqdm
 import pickle
 
 from sklearn.preprocessing import StandardScaler
@@ -112,7 +112,7 @@ def evaluate_model(class_model, dataset, labels, model_params={},
 
     k_fold = KFold(n_splits=n_splits, shuffle=True, random_state=random_state)
     scores = []
-    with tqdm(total=n_splits) as pbar:
+    with stqdm(total=n_splits) as pbar:
         for train_idx, _ in k_fold.split(dataset):
             # Split dataset
             X_train, X_val = dataset.iloc[train_idx], dataset.iloc[~train_idx]
