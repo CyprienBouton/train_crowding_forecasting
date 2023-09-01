@@ -4,7 +4,7 @@ import pickle
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import KFold
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 
 from .sncf_dataset import SNCFDataset
 
@@ -124,7 +124,7 @@ def evaluate_model(class_model, dataset, labels, model_params={},
             # Predict occupancy rates
             preds = predict_model(X_val, models_dict)
             # Append regression score
-            scores.append(mean_squared_error(y_val, preds))
+            scores.append(r2_score(y_val, preds))
             # Display progress bar
             pbar.update(1)
 
