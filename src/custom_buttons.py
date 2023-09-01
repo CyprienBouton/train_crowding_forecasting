@@ -15,14 +15,18 @@ def button_dropdown_list(button_name):
     st.button(button_name, on_click=change_show)
 
 
-def numberNone_input(label, *args, **kwargs):
+def numberNone_input(label_button, label_input=None, *args, **kwargs):
     """Numerical input widget that is null if the value is not provided
-    :param label: Name of the input variable.
+    :param label_button: Label of the dropdown button.
     :type label: str
+    :param label_input: Label of the number input button. By default the two labels are equals.
+    :type label: str or None
     """
-    button_dropdown_list(f"Enter the value of {label}")
-    if st.session_state[f"Enter the value of {label}"]:
-        value = st.number_input(label, *args, **kwargs)
+    if label_input==None:
+        label_input=label_button
+    button_dropdown_list(label_button)
+    if st.session_state[label_button]:
+        value = st.number_input(label_input, *args, **kwargs)
     else:
         value = None
     return value
