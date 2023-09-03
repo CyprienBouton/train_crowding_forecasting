@@ -10,11 +10,10 @@ def page2():
      unsafe_allow_html=True)
     st.markdown("""
     The data comes from infra-red sensors located above each door of the 
-        rolling stocks (NAT, R2N) in Île-de-France, measuring the number of 
+        rolling stocks in Île-de-France, measuring the number of 
         alighting and boarding passengers per door.
             
-    The columns, i.e., the features, are split into 6 contextual variables such 
-        as day, train id, etc. and 6 lag variables:
+    The columns, i.e., the features, are split into 6 contextual variables and 6 lag variables:
                  
     **Context Variables**
     - date: date of train passage
@@ -25,7 +24,7 @@ def page2():
     - composition: number of train unit
                 
     **Lags variables**
-    - p1q0: Occupancy rate of the previous train k-1 at the same station s
+    - p1q0: ccupancy rate of the previous train k-1 at the same station s
     - p2q0: Occupancy rate of the second previous k-2 train at the same station s
     - p3q0: Occupancy rate of the third train k-3 at the same station s
     - p0q1: Occupancy rate of the same train k at the previous station s-1
