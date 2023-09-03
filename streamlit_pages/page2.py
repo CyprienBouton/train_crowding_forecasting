@@ -11,8 +11,7 @@ def page2():
     st.markdown("""
     The data comes from infra-red sensors located above each door of the 
         rolling stocks (NAT, R2N) in Île-de-France, measuring the number of 
-        alighting and boarding passengers per door. This data is captured in 
-        real time and is accessible only at the train scale for this challenge.
+        alighting and boarding passengers per door.
             
     The columns, i.e., the features, are split into 6 contextual variables such 
         as day, train id, etc. and 6 lag variables:
@@ -26,10 +25,10 @@ def page2():
     - composition: number of train unit
                 
     Lags variables
-    - p1q0: occupancy rate of the previous train at the same station
-    - p2q0: occupancy rate of the second previous train at the same station
-    - p3q0: occupancy rate of the third train at the same station
-    - p0q1: occupancy rate of the same train k at the previous station
-    - p0q2: occupancy rate of the same train k at the second previous station
-    - p0q3: occupancy rate of the same train k at the third previous station
+    - p1q0: Occupancy rate of the previous train k-1 at the same station s
+    - p2q0: Occupancy rate of the second previous k-2 train at the same station s
+    - p3q0: Occupancy rate of the third train k-3 at the same station s
+    - p0q1: Occupancy rate of the same train k at the previous station s-1
+    - p0q2: Occupancy rate of the same train k at the second previous station s-2
+    - p0q3: Occupancy rate of the same train k at the third previous station s-3
     """)
