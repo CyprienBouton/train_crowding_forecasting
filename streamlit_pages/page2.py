@@ -16,7 +16,7 @@ def page2():
     The columns, i.e., the features, are split into 6 contextual variables such 
         as day, train id, etc. and 6 lag variables:
                  
-    <h4>Context Variables</h4>
+    **Context Variables**
     - date: date of train passage
     - train: id of the train (unique by day)
     - station: station id
@@ -24,11 +24,11 @@ def page2():
     - way: wether the train is going toward Paris (way is 0) or suburb (way is 1)
     - composition: number of train unit
                 
-    <h4>Lags variables</h4>
+    **Lags variables**
     - p1q0: Occupancy rate of the previous train k-1 at the same station s
     - p2q0: Occupancy rate of the second previous k-2 train at the same station s
     - p3q0: Occupancy rate of the third train k-3 at the same station s
     - p0q1: Occupancy rate of the same train k at the previous station s-1
     - p0q2: Occupancy rate of the same train k at the second previous station s-2
     - p0q3: Occupancy rate of the same train k at the third previous station s-3
-    """, unsafe_allow_html=True)
+    """)
