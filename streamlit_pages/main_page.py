@@ -12,7 +12,7 @@ def main_page():
         organizes machine learning challenges from data provided by public services, companies or 
         laboratories. These challenges are free and open to anyone.
         You can find this data challenge
-            <a href="https://challengedata.ens.fr/challenges/89/">here</a>.
+            <a href="https://challengedata.ens.fr/challenges/89">here</a>.
     </p>
     
     <p><h2>Goal</h2>
