@@ -9,7 +9,7 @@ def main_page():
     st.markdown("""
     </p><h2>Context</h2>
         This project is part of a Data Challenge provided by ENS. Each year, the school 
-        organize machine learning challenges from data provided by public services, companies or 
+        organizes machine learning challenges from data provided by public services, companies or 
         laboratories. These challenges are free and open to anyone.
         You can find this data challenge
             <a href="https://challengedata.ens.fr/challenges/89/">here</a>.
