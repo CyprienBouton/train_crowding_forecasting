@@ -2,7 +2,7 @@
 This project is part of a Data Challenge provided by ENS. Each year, the school 
 organizes machine learning challenges from data provided by public services, companies or 
 laboratories. These challenges are free and open to anyone.
-You can find this data challenge [here](https://challengedata.ens.fr/challenges/89)
+You can find this data challenge [here](https://challengedata.ens.fr/challenges/89).
 
 # Table of contents
 - [Goal](#goal)
