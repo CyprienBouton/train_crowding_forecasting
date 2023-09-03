@@ -8,6 +8,7 @@ You can find this data challenge [here]("https://challengedata.ens.fr/challenges
 - [Goal](#goal)
 - [Dataset](#dataset)
 - [Usage](#usage)
+- [Commit Policy](#commit-policy)
 
 # Goal
 The aim of this challenge is to give SNCF-Transilien 
@@ -32,16 +33,16 @@ Context Variables
 - composition: number of train unit
             
 Lags variables
-- p1q0: Occupancy rate of the previous train at the same station
-- p2q0: Occupancy rate of the second previous train at the same station
-- p3q0: Occupancy rate of the third train at the same station
-- p0q1: Occupancy rate of the same train at the previous station
-- p0q2: Occupancy rate of the same train at the second previous station
-- p0q3: Occupancy rate of the same train at the third previous station
+- p1q0: Occupancy rate of the previous train k-1 at the same station s
+- p2q0: Occupancy rate of the second previous k-2 train at the same station s
+- p3q0: Occupancy rate of the third train k-3 at the same station s
+- p0q1: Occupancy rate of the same train k at the previous station s-1
+- p0q2: Occupancy rate of the same train k at the second previous station s-2
+- p0q3: Occupancy rate of the same train k at the third previous station s-3
 
 # Usage
 This project is a streamlit app that could be used to predict the occupancy rate of 
-the train at the next station. You can launch the app by clicking [here]().
+the train at the next station. You can launch the app by clicking [here](https://traincrowdingforecasting.streamlit.app/).
 
 # Commit Policy
 Please, respect the following commit policy:
