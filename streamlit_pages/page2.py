@@ -31,4 +31,4 @@ def page2():
     - p0q1: Occupancy rate of the same train k at the previous station s-1
     - p0q2: Occupancy rate of the same train k at the second previous station s-2
     - p0q3: Occupancy rate of the same train k at the third previous station s-3
-    """)
+    """, unsafe_allow_html=True)
