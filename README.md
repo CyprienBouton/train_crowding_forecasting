@@ -1,8 +1,8 @@
 # Context
 This project is part of a Data Challenge provided by ENS. Each year, the school 
-organize machine learning challenges from data provided by public services, companies or 
+organizes machine learning challenges from data provided by public services, companies or 
 laboratories. These challenges are free and open to anyone.
-You can find this data challenge [here]("https://challengedata.ens.fr/challenges/89/")
+You can find this data challenge [here]("https://challengedata.ens.fr/challenges/89")
 
 # Table of contents
 - [Goal](#goal)
@@ -24,7 +24,7 @@ boarding passengers per door.
             
 The columns, i.e., the features, are split into 6 contextual variables and 6 lag variables:
                  
-Context Variables
+**Context Variables**
 - date: date of train passage
 - train: id of the train (unique by day)
 - station: station id
@@ -32,13 +32,13 @@ Context Variables
 - way: wether the train is going toward Paris (way is 0) or suburb (way is 1)
 - composition: number of train unit
             
-Lags variables
-- p1q0: Occupancy rate of the previous train k-1 at the same station s
-- p2q0: Occupancy rate of the second previous k-2 train at the same station s
-- p3q0: Occupancy rate of the third train k-3 at the same station s
-- p0q1: Occupancy rate of the same train k at the previous station s-1
-- p0q2: Occupancy rate of the same train k at the second previous station s-2
-- p0q3: Occupancy rate of the same train k at the third previous station s-3
+**Lags variables**
+- p1q0: Occupancy rate of the previous train **k-1** at the same station **s**
+- p2q0: Occupancy rate of the second previous **k-2** train at the same station **s**
+- p3q0: Occupancy rate of the third train **k-3** at the same station **s**
+- p0q1: Occupancy rate of the same train **k** at the previous station **s-1**
+- p0q2: Occupancy rate of the same train **k** at the second previous station **s-2**
+- p0q3: Occupancy rate of the same train **k** at the third previous station **s-3**
 
 # Usage
 This project is a streamlit app that could be used to predict the occupancy rate of 
